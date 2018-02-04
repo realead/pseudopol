@@ -40,7 +40,7 @@ size_t find_max(size_t N, const unsigned int *objects, size_t max_value){
       size_t shift_higher=MASK_SIZE-shift_lower;
       //printf("offset %zu, shift_lower %zu, shift_higher %zu\n", global_offset, shift_lower, shift_higher);
       for(size_t current=size-1;current<size;current--){
-           //printf("current: %zu\n", current);
+           //printf("current: %zu, value=%llu\n", current, reachable[current]);
            BitField lower_stamp=reachable[current]<<shift_lower;
            //shifting by more/equal than MASK_SIZE is undefined behaviour:
            BitField higher_stamp=shift_lower==0 ? 0 :reachable[current]>>shift_higher;
@@ -55,7 +55,9 @@ size_t find_max(size_t N, const unsigned int *objects, size_t max_value){
    }
    //null all bits > max_values:
    BitField mask=(ONE<<((max_value+1)%MASK_SIZE))-1;
-   reachable[size-1]&=mask;
+   if(mask!=0){//mask 0 means all bits needed
+        reachable[size-1]&=mask;
+   }
    
    //stop with the highest bit
    size_t res=0;
