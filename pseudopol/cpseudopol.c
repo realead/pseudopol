@@ -4,14 +4,17 @@
 {
     "distutils": {
         "depends": [
-            "subset_sum.c"
+            "pseudopol/subset_sum.c"
         ],
-        "name": "cpseudopol",
+        "include_dirs": [
+            "pseudopol"
+        ],
+        "name": "pseudopol.cpseudopol",
         "sources": [
-            "cpseudopol.pyx"
+            "pseudopol/cpseudopol.pyx"
         ]
     },
-    "module_name": "cpseudopol"
+    "module_name": "pseudopol.cpseudopol"
 }
 END: Cython Metadata */
 
@@ -525,8 +528,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__cpseudopol
-#define __PYX_HAVE_API__cpseudopol
+#define __PYX_HAVE__pseudopol__cpseudopol
+#define __PYX_HAVE_API__pseudopol__cpseudopol
 #include "subset_sum.c"
 #include "pythread.h"
 #include <string.h>
@@ -736,7 +739,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "cpseudopol.pyx",
+  "pseudopol/cpseudopol.pyx",
   "stringsource",
 };
 /* MemviewSliceStruct.proto */
@@ -1530,7 +1533,7 @@ static PyObject *__pyx_memoryview_assign_item_from_object(struct __pyx_memoryvie
 static PyObject *__pyx_memoryviewslice_convert_item_to_object(struct __pyx_memoryviewslice_obj *__pyx_v_self, char *__pyx_v_itemp); /* proto*/
 static PyObject *__pyx_memoryviewslice_assign_item_from_object(struct __pyx_memoryviewslice_obj *__pyx_v_self, char *__pyx_v_itemp, PyObject *__pyx_v_value); /* proto*/
 
-/* Module declarations from 'cpseudopol' */
+/* Module declarations from 'pseudopol.cpseudopol' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -1576,10 +1579,10 @@ static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_unsigned_int = { "unsigned int", NULL, sizeof(unsigned int), { 0 }, 0, IS_UNSIGNED(unsigned int) ? 'U' : 'I', IS_UNSIGNED(unsigned int), 0 };
-#define __Pyx_MODULE_NAME "cpseudopol"
-int __pyx_module_is_main_cpseudopol = 0;
+#define __Pyx_MODULE_NAME "pseudopol.cpseudopol"
+int __pyx_module_is_main_pseudopol__cpseudopol = 0;
 
-/* Implementation of 'cpseudopol' */
+/* Implementation of 'pseudopol.cpseudopol' */
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_MemoryError;
 static PyObject *__pyx_builtin_enumerate;
@@ -1635,7 +1638,6 @@ static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_ValueError[] = "ValueError";
-static const char __pyx_k_cpseudopol[] = "cpseudopol";
 static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_MemoryError[] = "MemoryError";
@@ -1644,7 +1646,6 @@ static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
-static const char __pyx_k_cpseudopol_pyx[] = "cpseudopol.pyx";
 static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
 static const char __pyx_k_allocate_buffer[] = "allocate_buffer";
 static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
@@ -1654,12 +1655,14 @@ static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
+static const char __pyx_k_pseudopol_cpseudopol[] = "pseudopol.cpseudopol";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
+static const char __pyx_k_pseudopol_cpseudopol_pyx[] = "pseudopol/cpseudopol.pyx";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
@@ -1704,8 +1707,6 @@ static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
-static PyObject *__pyx_n_s_cpseudopol;
-static PyObject *__pyx_kp_s_cpseudopol_pyx;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_dtype_is_object;
 static PyObject *__pyx_n_s_encode;
@@ -1735,6 +1736,8 @@ static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_objects;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_pickle;
+static PyObject *__pyx_n_s_pseudopol_cpseudopol;
+static PyObject *__pyx_kp_s_pseudopol_cpseudopol_pyx;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
 static PyObject *__pyx_n_s_pyx_getbuffer;
@@ -1764,7 +1767,7 @@ static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
-static PyObject *__pyx_pf_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *__pyx_self, unsigned PY_LONG_LONG __pyx_v_max_sum, __Pyx_memviewslice __pyx_v_objects); /* proto */
+static PyObject *__pyx_pf_9pseudopol_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *__pyx_self, unsigned PY_LONG_LONG __pyx_v_max_sum, __Pyx_memviewslice __pyx_v_objects); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -1844,7 +1847,7 @@ static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_codeobj__21;
 static PyObject *__pyx_codeobj__28;
 
-/* "cpseudopol.pyx":6
+/* "pseudopol/cpseudopol.pyx":6
  * 
  * #returns maximal subsum<=max_sum
  * def find_max_subsum(unsigned long long int max_sum, unsigned int[::1] objects not None):             # <<<<<<<<<<<<<<
@@ -1852,9 +1855,9 @@ static PyObject *__pyx_codeobj__28;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_10cpseudopol_1find_max_subsum = {"find_max_subsum", (PyCFunction)__pyx_pw_10cpseudopol_1find_max_subsum, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9pseudopol_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_9pseudopol_10cpseudopol_1find_max_subsum = {"find_max_subsum", (PyCFunction)__pyx_pw_9pseudopol_10cpseudopol_1find_max_subsum, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9pseudopol_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   unsigned PY_LONG_LONG __pyx_v_max_sum;
   __Pyx_memviewslice __pyx_v_objects = { 0, 0, { 0 }, { 0 }, { 0 } };
   PyObject *__pyx_r = 0;
@@ -1902,14 +1905,14 @@ static PyObject *__pyx_pw_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("find_max_subsum", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("cpseudopol.find_max_subsum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pseudopol.cpseudopol.find_max_subsum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(((PyObject *)__pyx_v_objects.memview) == Py_None)) {
     PyErr_Format(PyExc_TypeError, "Argument '%.200s' must not be None", "objects"); __PYX_ERR(0, 6, __pyx_L1_error)
   }
-  __pyx_r = __pyx_pf_10cpseudopol_find_max_subsum(__pyx_self, __pyx_v_max_sum, __pyx_v_objects);
+  __pyx_r = __pyx_pf_9pseudopol_10cpseudopol_find_max_subsum(__pyx_self, __pyx_v_max_sum, __pyx_v_objects);
 
   /* function exit code */
   goto __pyx_L0;
@@ -1920,7 +1923,7 @@ static PyObject *__pyx_pw_10cpseudopol_1find_max_subsum(PyObject *__pyx_self, Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *__pyx_self, unsigned PY_LONG_LONG __pyx_v_max_sum, __Pyx_memviewslice __pyx_v_objects) {
+static PyObject *__pyx_pf_9pseudopol_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *__pyx_self, unsigned PY_LONG_LONG __pyx_v_max_sum, __Pyx_memviewslice __pyx_v_objects) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   size_t __pyx_t_1;
@@ -1929,7 +1932,7 @@ static PyObject *__pyx_pf_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *_
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("find_max_subsum", 0);
 
-  /* "cpseudopol.pyx":7
+  /* "pseudopol/cpseudopol.pyx":7
  * #returns maximal subsum<=max_sum
  * def find_max_subsum(unsigned long long int max_sum, unsigned int[::1] objects not None):
  *     return find_max(len(objects), &objects[0], max_sum)             # <<<<<<<<<<<<<<
@@ -1952,7 +1955,7 @@ static PyObject *__pyx_pf_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *_
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "cpseudopol.pyx":6
+  /* "pseudopol/cpseudopol.pyx":6
  * 
  * #returns maximal subsum<=max_sum
  * def find_max_subsum(unsigned long long int max_sum, unsigned int[::1] objects not None):             # <<<<<<<<<<<<<<
@@ -1962,7 +1965,7 @@ static PyObject *__pyx_pf_10cpseudopol_find_max_subsum(CYTHON_UNUSED PyObject *_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("cpseudopol.find_max_subsum", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pseudopol.cpseudopol.find_max_subsum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_objects, 1);
@@ -14900,7 +14903,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "cpseudopol.array", /*tp_name*/
+  "pseudopol.cpseudopol.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -15008,7 +15011,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "cpseudopol.Enum", /*tp_name*/
+  "pseudopol.cpseudopol.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -15258,7 +15261,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "cpseudopol.memoryview", /*tp_name*/
+  "pseudopol.cpseudopol.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -15385,7 +15388,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "cpseudopol._memoryviewslice", /*tp_name*/
+  "pseudopol.cpseudopol._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -15515,8 +15518,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
-  {&__pyx_n_s_cpseudopol, __pyx_k_cpseudopol, sizeof(__pyx_k_cpseudopol), 0, 0, 1, 1},
-  {&__pyx_kp_s_cpseudopol_pyx, __pyx_k_cpseudopol_pyx, sizeof(__pyx_k_cpseudopol_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dtype_is_object, __pyx_k_dtype_is_object, sizeof(__pyx_k_dtype_is_object), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
@@ -15546,6 +15547,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_objects, __pyx_k_objects, sizeof(__pyx_k_objects), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
+  {&__pyx_n_s_pseudopol_cpseudopol, __pyx_k_pseudopol_cpseudopol, sizeof(__pyx_k_pseudopol_cpseudopol), 0, 0, 1, 1},
+  {&__pyx_kp_s_pseudopol_cpseudopol_pyx, __pyx_k_pseudopol_cpseudopol_pyx, sizeof(__pyx_k_pseudopol_cpseudopol_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_getbuffer, __pyx_k_pyx_getbuffer, sizeof(__pyx_k_pyx_getbuffer), 0, 0, 1, 1},
@@ -15798,7 +15801,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "cpseudopol.pyx":6
+  /* "pseudopol/cpseudopol.pyx":6
  * 
  * #returns maximal subsum<=max_sum
  * def find_max_subsum(unsigned long long int max_sum, unsigned int[::1] objects not None):             # <<<<<<<<<<<<<<
@@ -15807,7 +15810,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_max_sum, __pyx_n_s_objects); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cpseudopol_pyx, __pyx_n_s_find_max_subsum, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pseudopol_cpseudopol_pyx, __pyx_n_s_find_max_subsum, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 6, __pyx_L1_error)
 
   /* "View.MemoryView":284
  *         return self.name
@@ -16010,14 +16013,14 @@ static int __pyx_pymod_exec_cpseudopol(PyObject *__pyx_pyinit_module)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_cpseudopol) {
+  if (__pyx_module_is_main_pseudopol__cpseudopol) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "cpseudopol")) {
-      if (unlikely(PyDict_SetItemString(modules, "cpseudopol", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pseudopol.cpseudopol")) {
+      if (unlikely(PyDict_SetItemString(modules, "pseudopol.cpseudopol", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -16076,18 +16079,18 @@ static int __pyx_pymod_exec_cpseudopol(PyObject *__pyx_pyinit_module)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cpseudopol.pyx":6
+  /* "pseudopol/cpseudopol.pyx":6
  * 
  * #returns maximal subsum<=max_sum
  * def find_max_subsum(unsigned long long int max_sum, unsigned int[::1] objects not None):             # <<<<<<<<<<<<<<
  *     return find_max(len(objects), &objects[0], max_sum)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_10cpseudopol_1find_max_subsum, NULL, __pyx_n_s_cpseudopol); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9pseudopol_10cpseudopol_1find_max_subsum, NULL, __pyx_n_s_pseudopol_cpseudopol); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_max_subsum, __pyx_t_1) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cpseudopol.pyx":1
+  /* "pseudopol/cpseudopol.pyx":1
  * cdef extern from "subset_sum.c":             # <<<<<<<<<<<<<<
  *     size_t find_max(size_t N, const unsigned int *objects, size_t max_value)
  * 
@@ -16257,11 +16260,11 @@ static int __pyx_pymod_exec_cpseudopol(PyObject *__pyx_pyinit_module)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init cpseudopol", 0, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pseudopol.cpseudopol", 0, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init cpseudopol");
+    PyErr_SetString(PyExc_ImportError, "init pseudopol.cpseudopol");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
