@@ -51,12 +51,26 @@ class SubSetSumTester(object):
     def test_max_frist_bit3(self):
         self.assertEqual(63, self.pp.find_max_subsum(64, array.array('I', [63,2])))
 
+    def test_zero_weigth(self):
+        self.assertEqual(0, self.pp.find_max_subsum(64, array.array('I', [0])))
 
+### examples with more elements
+    def test_bins(self):
+        bins=array.array('I', [1,2,4,8,16,32,64,128,256,512,1024])
+        for i in range(1048):
+            self.assertEqual(i, self.pp.find_max_subsum(i, bins))
+
+    def test_one_zero_weigth(self):
+        self.assertEqual(64, self.pp.find_max_subsum(64, array.array('I', [0,63,1,2])))
+
+      
 #real testers
 class CSubSetSumTester(SubSetSumTester, unittest.TestCase):
     pp=c_pp
 
 class PSubSetSumTester(SubSetSumTester, unittest.TestCase):
     pp=p_pp
+
+
 
 
