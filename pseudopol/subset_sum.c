@@ -29,7 +29,7 @@ size_t find_max(size_t N, const unsigned int *objects, size_t max_value){
    size_t size=(max_value+MASK_SIZE)/MASK_SIZE;
    BitField *reachable=(BitField*)calloc(size, MASK_SIZE);
 
-   //printf("size %u\n", size); 
+   //printf("size %zu\n", size); 
    //only 0 is reachable at start/without objects:
    reachable[0]=1UL;
 
@@ -38,11 +38,13 @@ size_t find_max(size_t N, const unsigned int *objects, size_t max_value){
       size_t global_offset=objects[id]/MASK_SIZE;
       size_t shift_lower=objects[id]%MASK_SIZE;
       size_t shift_higher=MASK_SIZE-shift_lower;
-      //printf("offset %ull, shift_lower %ull, shift_higher %ull", global_offset, shift_lower, shift_higher);
+      //printf("offset %zu, shift_lower %zu, shift_higher %zu\n", global_offset, shift_lower, shift_higher);
       for(size_t current=size-1;current<size;current--){
+           //printf("current: %zu\n", current);
            BitField lower_stamp=reachable[current]<<shift_lower;
-           BitField higher_stamp=reachable[current]>>shift_higher;
-           //printf("offset %ull, shift_lower %ull, shift_higher %ull", global_offset, shift_lower, shift_higher);
+           //shifting by more/equal than MASK_SIZE is undefined behaviour:
+           BitField higher_stamp=shift_lower==0 ? 0 :reachable[current]>>shift_higher;
+           //printf("lower_stamp %llu, higher_stamp %llu\n", lower_stamp, higher_stamp);
            if(current+global_offset<size){
                  reachable[current+global_offset]|=lower_stamp;
                  if(current+global_offset+1<size){
