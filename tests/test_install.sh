@@ -26,5 +26,11 @@ pip freeze
 
 sh run_unit_tests.sh
 
-rm -r "$ENV_DIR"
+
+#clean or keep the environment
+if [ "$3" = "keep" ]; then
+   echo "keeping enviroment $ENV_DIR"
+else
+   rm -r "$ENV_DIR"
+fi;
 
