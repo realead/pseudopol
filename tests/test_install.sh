@@ -1,0 +1,30 @@
+set -e
+
+if [ "$1" = "p2" ]; then
+   ENV_DIR="../p2"
+   virtualenv -p python2 "$ENV_DIR"
+   echo "Testing python2"
+else
+   ENV_DIR="../p3"
+   virtualenv -p python3 "$ENV_DIR"
+   echo "Testing python3"
+fi;
+
+#activate environment
+. "$ENV_DIR/bin/activate"
+
+#prepare:
+pip install cython
+
+if [ "$2" = "from-git" ]; then
+    pip install https://github.com/realead/pseudopol/zipball/master
+else
+    (cd .. && python setup.py install)
+fi;
+
+pip freeze
+
+sh run_unit_tests.sh
+
+rm -r "$ENV_DIR"
+
