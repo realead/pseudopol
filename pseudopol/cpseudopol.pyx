@@ -1,3 +1,5 @@
+from cpython cimport array #needed for python2
+
 cdef extern from "subset_sum.c":
     size_t find_max(size_t N, const unsigned int *objects, size_t max_value)
 
