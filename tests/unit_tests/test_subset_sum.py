@@ -6,6 +6,9 @@ import pseudopol.ppseudopol as p_pp
 
 class SubSetSumTester(object): 
 
+    def test_empty_set(self):
+        self.assertEqual(0, self.pp.find_max_subsum(1, array.array('I')))
+
     def test_one_bit_too_big(self):
         self.assertEqual(0, self.pp.find_max_subsum(1, array.array('I', [64])))
     
