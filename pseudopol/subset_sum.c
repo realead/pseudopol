@@ -103,11 +103,13 @@ int find_if_subset_sum_exists(size_t n_pos, unsigned int *positives, size_t n_ne
         //printf("offset %zu, shift_lower %zu, shift_higher %zu\n", global_offset, shift_lower, shift_higher);
         for(size_t current=0;current<size;current++){
            //printf("current: %zu, value=%llu\n", current, reachable[current]);
-           BitField lower_stamp=shift_lower==0 ? 0 :reachable[current]>>shift_higher;
            //shifting by more/equal than MASK_SIZE is undefined behaviour:
-           BitField higher_stamp=reachable[current]<<shift_lower;
+           BitField lower_stamp=shift_lower==0 ? 0 :reachable[current]<<shift_higher;
+           BitField higher_stamp=reachable[current]>>shift_lower;
+           //printf("higher_stamp: %llu, lower_stamp%llu\n", higher_stamp, lower_stamp);
 
            size_t index=current-global_offset;
+           //printf("current index: %zu\n", index);
            if(index<size){
                  if(index==0 && (1&higher_stamp)==1){//0 reached
                       found=1;
