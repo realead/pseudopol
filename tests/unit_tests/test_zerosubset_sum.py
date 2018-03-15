@@ -78,6 +78,29 @@ class ZeroSubSetSumTester(object):
     def test_three_not_all_needed(self):
         self.assertEqual(True, self.pp.zerosum_subset_exists(array.array('i',[-64,64,2])))  
 
+    def test_bins_pos_yes(self):
+        lst=[2,4,8,16,32,64,128,256,512,1024]        
+        for i in range(2,1048,2):
+            bins=array.array('i', lst+[-i])
+            self.assertEqual(True, self.pp.zerosum_subset_exists(bins))
+
+    def test_bins_pos_no(self):
+        lst=[2,4,8,16,32,64,128,256,512,1024]        
+        for i in range(1,1048,2):
+            bins=array.array('i', lst+[-i])
+            self.assertEqual(False, self.pp.zerosum_subset_exists(bins))
+
+    def test_bins_neg_yes(self):
+        lst=[-2,-4,-8,-16,-32,-64,-128,-256,-512,-1024]        
+        for i in range(2,1048,2):
+            bins=array.array('i', lst+[i])
+            self.assertEqual(True, self.pp.zerosum_subset_exists(bins))
+
+    def test_bins_neg_no(self):
+        lst=[-2,-4,-8,-16,-32,-64,-128,-256,-512,-1024]        
+        for i in range(1,1048,2):
+            bins=array.array('i', lst+[i])
+            self.assertEqual(False, self.pp.zerosum_subset_exists(bins))
 
 #real testers
 class CZeroSubsetSumTester(ZeroSubSetSumTester, unittest.TestCase):
