@@ -51,6 +51,33 @@ class SubSetSumTester(object):
     def test_two_equal_pm_64(self):
         self.assertEqual(True, self.fun(array.array('i',[-64,64]))) 
 
+    def test_three_yes_1(self):
+        self.assertEqual(True, self.fun(array.array('i',[1,-2,1])))
+
+    def test_three_yes_2(self):
+        self.assertEqual(True, self.fun(array.array('i',[1,2,-3])))  
+
+    def test_three_yes_3(self):
+        self.assertEqual(True, self.fun(array.array('i',[1,63,-64])))    
+
+    def test_three_yes_4(self):
+        self.assertEqual(True, self.fun(array.array('i',[-65,63,2])))  
+
+    def test_three_no_1(self):
+        self.assertEqual(False, self.fun(array.array('i',[1,-3,1])))
+
+    def test_three_no_2(self):
+        self.assertEqual(False, self.fun(array.array('i',[1,4,-3])))  
+
+    def test_three_no_3(self):
+        self.assertEqual(False, self.fun(array.array('i',[1,62,-64])))    
+
+    def test_three_no_4(self):
+        self.assertEqual(False, self.fun(array.array('i',[-66,65,2])))   
+
+    def test_three_not_all_needed(self):
+        self.assertEqual(True, self.fun(array.array('i',[-64,64,2])))  
+
 
 #real testers
 class CZeroSubsetSumTester(SubSetSumTester, unittest.TestCase):
