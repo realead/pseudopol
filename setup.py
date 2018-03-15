@@ -18,7 +18,7 @@ if USE_CYTHON:
 
 kwargs = {
       'name':'pseudopol',
-      'version':'0.1.0',
+      'version':'0.2.0',
       'description':'Collection of solution for pseudo-polynomial problems',
       'author':'Egor Dranischnikow',
       'url':'https://github.com/realead/pseudopol',
