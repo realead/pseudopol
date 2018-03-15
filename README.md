@@ -46,7 +46,7 @@ There are two sets of functions:
    1. the pure python implementation, which can be found in module `pseudopol.ppseudopol`
    2. fast C-implementation which can be found in `pseudopol.cpseudopol`
 
-###find_max_subsum
+### find_max_subsum
 
 Given the values of objects `Oi` `i=1...n`, find a subsum `S=sum Oi` for `i` from `I` - a subset of `{1...n}` which is maximal and <= some given maximal value `max_val`.
 
@@ -55,7 +55,10 @@ Properties:
    1. c-version needs around 1bit times `max_val`, python version around 80bytes, i.e. 640 times more (actually unclear why)
    2. Time complexity `O(n*max_val)`, c-version is about 1000 times faster than the python version (bit-tricks possible).
    
-    
+### zerosum_subset_exists
+
+Given the values of objects `Oi` `i=1...n`, find a non-empty subset where the sum of elements is `0`.
+
 
 ## Testing
 
@@ -80,3 +83,4 @@ the installed `pseudopol` version isn't from the current source, but will be dow
 ## History
 
 0.1.0 `find_max_subsum`
+0.2.0 `zerosum_subset_exists` // bug fixes 
