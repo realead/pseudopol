@@ -66,6 +66,14 @@ class SubSetSumTester(object):
     def test_one_zero_weigth(self):
         self.assertEqual(64, self.pp.find_max_subsum(64, array.array('I', [0,63,1,2])))
 
+### Error tests:
+
+    def test_out_of_memory(self):
+        bins=array.array('I', [1<<31]*10000)
+        m=1<<48#for bigger number  (sys.maxsize for P3 or sys.maxint for P2) it could be OverflowError
+        with self.assertRaises(MemoryError) as context:
+             self.pp.find_max_subsum(m, bins)
+
       
 #real testers
 class CSubSetSumTester(SubSetSumTester, unittest.TestCase):

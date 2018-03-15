@@ -26,6 +26,9 @@ unsigned int first_set_bit(BitField mask){
 BitField *get_reachable(size_t N, const unsigned int *objects, size_t max_value){
    size_t size=(max_value+MASK_SIZE)/MASK_SIZE;
    BitField *reachable=(BitField*)calloc(size, MASK_SIZE);
+   if(reachable==NULL){
+      return NULL;
+   }
 
    //printf("size %zu\n", size); 
    //only 0 is reachable at start/without objects:
@@ -62,9 +65,13 @@ BitField *get_reachable(size_t N, const unsigned int *objects, size_t max_value)
 
 
 //finds the maximal possible sum <=max
-size_t find_max(size_t N, const unsigned int *objects, size_t max_value){ 
+size_t find_max(size_t N, const unsigned int *objects, size_t max_value, int *error){ 
 
    BitField *reachable=get_reachable(N, objects, max_value);
+   if(reachable==NULL){
+       *error=1;
+       return 0;
+   }
    size_t size=(max_value+MASK_SIZE)/MASK_SIZE;
 
    //stop with the highest bit
@@ -81,7 +88,9 @@ size_t find_max(size_t N, const unsigned int *objects, size_t max_value){
 }
 
 
-//true if there is a non-empty subset with sum=0, false otherwise
+//1 if there is a non-empty subset with sum=0
+//0 if there is none
+//-1 if an error occured
 int find_if_subset_sum_exists(size_t n_pos, unsigned int *positives, size_t n_neg, unsigned int *negatives){
     size_t max_value=0;
     for(size_t i=0;i<n_pos;i++){
@@ -90,6 +99,9 @@ int find_if_subset_sum_exists(size_t n_pos, unsigned int *positives, size_t n_ne
 
     //stamp positive objects:
     BitField *reachable=get_reachable(n_pos, positives, max_value);
+    if(reachable==NULL){
+        return -1;
+    }
     size_t size=(max_value+MASK_SIZE)/MASK_SIZE;
 
     //stamp negative objects:
@@ -130,7 +142,9 @@ int find_if_subset_sum_exists(size_t n_pos, unsigned int *positives, size_t n_ne
 }
 
 
-//1if there is a non-empty subset with sum=0, 0 otherwise
+//1 if there is a non-empty subset with sum=0
+//0 if there is none
+//-1 if an error occured
 int subset_sum_exists(size_t N, const int *objects){
     int found=0;
     size_t n_pos=0;

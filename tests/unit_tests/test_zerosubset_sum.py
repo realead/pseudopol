@@ -102,6 +102,14 @@ class ZeroSubSetSumTester(object):
             bins=array.array('i', lst+[i])
             self.assertEqual(False, self.pp.zerosum_subset_exists(bins))
 
+### Error tests:
+
+    def test_out_of_memory(self):
+        lst=[1<<30]*1000
+        bins=array.array('i', lst+[-(x-1) for x in lst])
+        with self.assertRaises(MemoryError) as context:
+             self.pp.zerosum_subset_exists(bins)
+
 #real testers
 class CZeroSubsetSumTester(ZeroSubSetSumTester, unittest.TestCase):
     pp=c_pp
